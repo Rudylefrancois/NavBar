@@ -7,8 +7,13 @@
     display: flex;
     justify-content: center;
     list-style-type: none;
+    padding-inline: 0;
 }
 
 .navBar-list{
     margin: 0 1rem;
+}
+
+.navBar-list a{
+    text-decoration: none;
 }
