@@ -1,6 +1,6 @@
 .navBar{
     background-color: bisque;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .navBar-lists{
@@ -11,9 +11,101 @@
 }
 
 .navBar-list{
+    font-size: 1.2rem;
+    font-weight: bold;
     margin: 0 1rem;
 }
 
 .navBar-list a{
     text-decoration: none;
+}
+
+.navBar-btn{
+    width: 50px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color:inherit;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+@media screen and (max-width:768px) {
+.navBar{
+    padding: 2.5rem;
+}
+
+.navBar-list{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 1rem;
+}
+
+.navBar-lists{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: -100vw;
+    bottom: 0;
+    width: 0;
+    height: 100vh;
+    visibility: hidden;
+    background-color: bisque;
+    transition: all 1.2s ease-out;
+    }  
+
+.show-nav .navBar-lists {
+    width: 100vw;
+    right: 0;
+    visibility: visible;
+    }
+
+.navBar-btn{
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    }
+      
+.navBar-burger,
+  .navBar-burger::before,
+  .navBar-burger::after{
+    display: block;
+    width: 40px;
+    height: 3px;
+    position: relative;
+    border-radius: 3px;
+    background: rgb(0, 0, 0);
+    transition: all .5s ease-in-out;
+  }
+
+  .navBar-burger::before,
+  .navBar-burger::after{
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .navBar-burger::before{
+    transform: translateY(-12px);
+  }
+
+  .navBar-burger::after{
+    transform: translateY(12px);
+  }
+
+  .show-nav .navBar-burger{
+    width: 0;
+    background: transparent;
+  }
+
+  .show-nav .navBar-burger::before{
+    transform: rotate(45deg);
+  }
+
+  .show-nav .navBar-burger::after{
+    transform: rotate(-45deg);
+  }
 }
